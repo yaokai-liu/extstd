@@ -27,6 +27,7 @@
 #include "extbit.h"
 #include "extint.h"
 #include "extfloat.h"
+#include <string.h>
 
 #define max(a, b)   ((a) > (b) ? (a) : (b))
 #define abs(a)      ((a) > (0) ? (a) : -(a))
@@ -82,7 +83,8 @@ float_compose(128, 16)
 
 #define float_decompose(_w, _ew)                                                                              \
 inline void float##_w##_decompose(const FLOAT(_w) val, UINT(_w) *mantissa, INT(_ew) *exponent, bool *sign) {  \
-  const UINT(_w) bits = *(UINT(_w) *)&val;                                                                    \
+  UINT(_w) bits = 0;                                                                                          \
+  memcpy(&bits, &val, sizeof(UINT(_w)));                                                                      \
   *sign = bits >> ((_w) - 1);                                                                                 \
   const UINT(_w) mant = bits & ~(UINT##_w##_MAX << FLOAT##_w##_MANT_BIT);                                     \
   const UINT(_w) biased_exp = (bits << 1) >> (FLOAT##_w##_MANT_BIT + 1);                                      \
