@@ -33,20 +33,11 @@
 #define abs(a)      ((a) > (0) ? (a) : -(a))
 #define sgn(a)      ((a >> ((sizeof(a) - 1) * 8 + 7)) ? -1 : 1)
 
-#define first_leading_one(u)  _Generic((u),   \
-  uint16_t:   first_leading_one_u16 (u),      \
-  uint32_t:   first_leading_one_u32 (u),      \
-  uint64_t:   first_leading_one_u64 (u),      \
-  uint128_t:  first_leading_one_u128(u),      \
-  uint256_t:  first_leading_one_u256(u),      \
-  default:    0                               \
-)
-
 #define FLOAT(w) float##w##_t
 #define UINT(w) uint##w##_t
 #define INT(w) int##w##_t
 
-#define float_compose(_w, _ew)                                                        \
+#define float_compose(_w, _ew)                                                          \
 inline FLOAT(_w) float##_w##_compose(bool sign, UINT(_w) mantissa, INT(_ew) exponent) { \
   const uint32_t result_bits = _w;                                                      \
   const uint32_t order_bits = FLOAT##_w##_EXP_BIT;                                      \
