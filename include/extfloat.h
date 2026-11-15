@@ -97,45 +97,45 @@ static_assert(sizeof(float128_t) == 16, "float128_t must be 128-bit");
 // @mantissa: is required in form of '1BB...BB', here FLOAT16_MANT_BIT count of 'B'.
 //            assumed 'BB...BB' not more than FLOAT16_MANT_MAX
 //            'xxxxxBB...BB' can be accepted (only BB...BB are effective), but not suggested.
-float16_t float16_compose(bool sign, uint16_t mantissa, int16_t exponent);
+float16_t extstd_float16_compose(bool sign, uint16_t mantissa, int16_t exponent);
 
 // never return the NaN
 // @mantissa: is required in form of 1BB...BB, here FLOAT32_MANT_BIT count of 'B'.
 //            assumed 'BB...BB' not more than FLOAT32_MANT_MAX
 //            'xxxxxBB...BB' can be accepted (only BB...BB are effective), but not suggested.
-float32_t float32_compose(bool sign, uint32_t mantissa, int16_t exponent);
+float32_t extstd_float32_compose(bool sign, uint32_t mantissa, int16_t exponent);
 // never return the NaN
 // @mantissa: is required in form of 1BB...BB, here FLOAT64_MANT_BIT count of 'B'.
 //            assumed 'BB...BB' not more than FLOAT64_MANT_MAX
 //            'xxxxxBB...BB' can be accepted (only BB...BB are effective), but not suggested.
-float64_t float64_compose(bool sign, uint64_t mantissa, int16_t exponent);
+float64_t extstd_float64_compose(bool sign, uint64_t mantissa, int16_t exponent);
 
 // never return the NaN
 // @mantissa: is required in form of 1BB...BB, here FLOAT128_MANT_BIT count of 'B'.
 //            assumed 'BB...BB' not more than FLOAT128_MANT_MAX
 //            'xxxxxBB...BB' can be accepted (only BB...BB are effective), but not suggested.
-float128_t float128_compose(bool sign, uint128_t mantissa, int16_t exponent);
+float128_t extstd_float128_compose(bool sign, uint128_t mantissa, int32_t exponent);
 
 // never return the NaN
 // @mantissa: is required in form of 1BB...BB, here FLOAT256_MANT_BIT count of 'B'.
 //            assumed 'BB...BB' not more than FLOAT256_MANT_MAX
 //            'xxxxxBB...BB' can be accepted (only BB...BB are effective), but not suggested.
-// float256_t float256_compose(bool sign, uint256_t  mantissa, int32_t exponent);
+// float256_t extstd_float256_compose(bool sign, uint256_t  mantissa, int32_t exponent);
 
 // val == [sign]mantissa * 2^{exponent}
 // if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
-void float16_decompose(const float16_t val, uint16_t *mantissa, int16_t *exponent, bool *sign);
+void extstd_float16_decompose(const float16_t val, uint16_t *mantissa, int16_t *exponent, bool *sign);
 
 // val == [sign]mantissa * 2^{exponent}
 // if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
-void float32_decompose(const float32_t val, uint32_t *mantissa, int16_t *exponent, bool *sign);
+void extstd_float32_decompose(const float32_t val, uint32_t *mantissa, int16_t *exponent, bool *sign);
 
 // val == [sign]mantissa * 2^{exponent}
 // if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
-void float64_decompose(const float64_t val, uint64_t *mantissa, int16_t *exponent, bool *sign);
+void extstd_float64_decompose(const float64_t val, uint64_t *mantissa, int16_t *exponent, bool *sign);
 
 // val == [sign]mantissa * 2^{exponent}
 // if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
-void float128_decompose(const float128_t val, uint128_t *mantissa, int16_t *exponent, bool *sign);
+void extstd_float128_decompose(const float128_t val, uint128_t *mantissa, int32_t *exponent, bool *sign);
 
 #endif //EXTSTD_EXTFLOAT_H
