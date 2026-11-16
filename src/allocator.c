@@ -25,7 +25,7 @@
  * Copyright (c) 2026 Yaokai Liu. All rights reserved.
  **/
 
-#include "../include/allocator.h"
+#include "allocator.h"
 #include <malloc.h>
 #include <string.h>
 
