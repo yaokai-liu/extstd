@@ -31,7 +31,7 @@
 
 #define max(a, b)   ((a) > (b) ? (a) : (b))
 #define abs(a)      ((a) > (0) ? (a) : -(a))
-#define sgn(a)      ((a >> ((sizeof(a) - 1) * 8 + 7)) ? -1 : 1)
+#define sgn(a)      ((a) > (0) ?   1 :  -1)
 
 #define FLOAT(w) float##w##_t
 #define UINT(w) uint##w##_t
