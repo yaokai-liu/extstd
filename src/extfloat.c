@@ -29,9 +29,9 @@
 #include "extfloat.h"
 #include <string.h>
 
-#define max(a, b)   ((a) > (b) ? (a) : (b))
-#define abs(a)      ((a) > (0) ? (a) : -(a))
-#define sgn(a)      ((a) > (0) ?   1 :  -1)
+#define max(a, b)   ((a) >  (b) ? (a) :  (b))
+#define abs(a)      ((a) >  (0) ? (a) : -(a))
+#define sgn(a)      ((a) >= (0) ?  1  :  -1 )
 
 #define FLOAT(w) float##w##_t
 #define UINT(w) uint##w##_t

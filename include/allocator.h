@@ -27,7 +27,7 @@
 
 #ifndef EXTSTD_ALLOCATOR_H
 #define EXTSTD_ALLOCATOR_H
-
+#include "extvisibility.h"
 #include <stddef.h>
 
 #define REFER(T) /*VirtAddr*/ T *
@@ -42,7 +42,7 @@ typedef struct Allocator {
   void *(* const memset)(void *dest, int value, size_t size);
 } Allocator;
 
-extern const Allocator STDAllocator;
+extern _SHARED_API const Allocator STDAllocator;
 
 typedef void destruct_t(void *, const Allocator *);
 

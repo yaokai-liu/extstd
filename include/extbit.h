@@ -38,14 +38,15 @@
 #  define EXTSTD_ATTR_UNSEQUENCED
 #endif
 
+#include "extvisibility.h"
 #if __has_include(<stdbit.h>)
 #include <stdbit.h>
 #else
-unsigned int stdc_leading_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_zeros_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_zeros_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_zeros_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_zeros_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_leading_zeros(u)  _Generic((u),          \
   unsigned char         : stdc_leading_zeros_uc (u),  \
   unsigned short        : stdc_leading_zeros_us (u),  \
@@ -54,11 +55,11 @@ unsigned int stdc_leading_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UN
   unsigned long long int: stdc_leading_zeros_ull(u),  \
   default:    0                                       \
 )
-unsigned int stdc_leading_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_ones_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_ones_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_leading_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_ones_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_ones_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_leading_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_leading_ones(u)  _Generic((u),         \
   unsigned char         : stdc_leading_ones_uc (u), \
   unsigned short        : stdc_leading_ones_us (u), \
@@ -67,11 +68,11 @@ unsigned int stdc_leading_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNS
   unsigned long long int: stdc_leading_ones_ull(u), \
   default:    0                                     \
 )
-unsigned int stdc_trailing_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_zeros_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_zeros_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_zeros_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_zeros_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_trailing_zeros(u)  _Generic((u),         \
   unsigned char         : stdc_trailing_zeros_uc (u), \
   unsigned short        : stdc_trailing_zeros_us (u), \
@@ -80,11 +81,11 @@ unsigned int stdc_trailing_zeros_ull(unsigned long long int value) EXTSTD_ATTR_U
   unsigned long long int: stdc_trailing_zeros_ull(u), \
   default:    0                                       \
 )
-unsigned int stdc_trailing_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_ones_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_ones_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_trailing_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_ones_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_ones_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_trailing_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_trailing_ones(u)  _Generic((u),         \
   unsigned char         : stdc_trailing_ones_uc (u), \
   unsigned short        : stdc_trailing_ones_us (u), \
@@ -93,11 +94,11 @@ unsigned int stdc_trailing_ones_ull(unsigned long long int value) EXTSTD_ATTR_UN
   unsigned long long int: stdc_trailing_ones_ull(u), \
   default:    0                                      \
 )
-unsigned int stdc_first_leading_zero_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_zero_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_zero_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_zero_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_zero_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_zero_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_zero_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_zero_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_zero_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_zero_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_first_leading_zero(u)  _Generic((u),         \
   unsigned char         : stdc_first_leading_zero_uc (u), \
   unsigned short        : stdc_first_leading_zero_us (u), \
@@ -106,11 +107,11 @@ unsigned int stdc_first_leading_zero_ull(unsigned long long int value) EXTSTD_AT
   unsigned long long int: stdc_first_leading_zero_ull(u), \
   default:    0                                           \
 )
-unsigned int stdc_first_leading_one_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_one_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_one_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_one_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_leading_one_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_one_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_one_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_one_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_one_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_leading_one_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_first_leading_one(u)  _Generic((u),         \
   unsigned char         : stdc_first_leading_one_uc (u), \
   unsigned short        : stdc_first_leading_one_us (u), \
@@ -119,11 +120,11 @@ unsigned int stdc_first_leading_one_ull(unsigned long long int value) EXTSTD_ATT
   unsigned long long int: stdc_first_leading_one_ull(u), \
   default:    0                                          \
 )
-unsigned int stdc_first_trailing_zero_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_zero_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_zero_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_zero_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_zero_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_zero_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_zero_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_zero_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_zero_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_zero_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_first_trailing_zero(u)  _Generic((u),         \
   unsigned char         : stdc_first_trailing_zero_uc (u), \
   unsigned short        : stdc_first_trailing_zero_us (u), \
@@ -132,11 +133,11 @@ unsigned int stdc_first_trailing_zero_ull(unsigned long long int value) EXTSTD_A
   unsigned long long int: stdc_first_trailing_zero_ull(u), \
   default:    0                                            \
 )
-unsigned int stdc_first_trailing_one_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_one_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_one_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_one_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_first_trailing_one_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_one_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_one_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_one_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_one_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_first_trailing_one_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_first_trailing_one(u)  _Generic((u),         \
   unsigned char         : stdc_first_trailing_one_uc (u), \
   unsigned short        : stdc_first_trailing_one_us (u), \
@@ -145,11 +146,11 @@ unsigned int stdc_first_trailing_one_ull(unsigned long long int value) EXTSTD_AT
   unsigned long long int: stdc_first_trailing_one_ull(u), \
   default:    0                                           \
 )
-unsigned int stdc_count_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_zeros_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_zeros_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_zeros_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_zeros_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_count_zeros(u)  _Generic((u),         \
   unsigned char         : stdc_count_zeros_uc (u), \
   unsigned short        : stdc_count_zeros_us (u), \
@@ -158,11 +159,11 @@ unsigned int stdc_count_zeros_ull(unsigned long long int value) EXTSTD_ATTR_UNSE
   unsigned long long int: stdc_count_zeros_ull(u), \
   default:    0                                    \
 )
-unsigned int stdc_count_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_ones_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_ones_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_count_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_ones_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_ones_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_count_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_count_ones(u)  _Generic((u),         \
   unsigned char         : stdc_count_ones_uc (u), \
   unsigned short        : stdc_count_ones_us (u), \
@@ -171,11 +172,11 @@ unsigned int stdc_count_ones_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQ
   unsigned long long int: stdc_count_ones_ull(u), \
   default:    0                                   \
 )
-bool stdc_has_single_bit_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-bool stdc_has_single_bit_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-bool stdc_has_single_bit_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-bool stdc_has_single_bit_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-bool stdc_has_single_bit_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool stdc_has_single_bit_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool stdc_has_single_bit_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool stdc_has_single_bit_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool stdc_has_single_bit_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool stdc_has_single_bit_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_has_single_bit(u)  _Generic((u),         \
   unsigned char         : stdc_has_single_bit_uc (u), \
   unsigned short        : stdc_has_single_bit_us (u), \
@@ -184,11 +185,11 @@ bool stdc_has_single_bit_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENC
   unsigned long long int: stdc_has_single_bit_ull(u), \
   default:    0                                       \
 )
-unsigned int stdc_bit_width_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_bit_width_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_bit_width_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_bit_width_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int stdc_bit_width_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_bit_width_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_bit_width_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_bit_width_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_bit_width_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int stdc_bit_width_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_bit_width(u)  _Generic((u),         \
   unsigned char         : stdc_bit_width_uc (u), \
   unsigned short        : stdc_bit_width_us (u), \
@@ -197,11 +198,11 @@ unsigned int stdc_bit_width_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQU
   unsigned long long int: stdc_bit_width_ull(u), \
   default:    0                                  \
 )
-unsigned char          stdc_bit_floor_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned short         stdc_bit_floor_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int           stdc_bit_floor_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned long int      stdc_bit_floor_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned long long int stdc_bit_floor_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned char          stdc_bit_floor_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned short         stdc_bit_floor_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int           stdc_bit_floor_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned long int      stdc_bit_floor_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned long long int stdc_bit_floor_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_bit_floor(u)  _Generic((u),         \
   unsigned char         : stdc_bit_floor_uc (u), \
   unsigned short        : stdc_bit_floor_us (u), \
@@ -210,11 +211,11 @@ unsigned long long int stdc_bit_floor_ull(unsigned long long int value) EXTSTD_A
   unsigned long long int: stdc_bit_floor_ull(u), \
   default:    0                                  \
 )
-unsigned char          stdc_bit_ceil_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned short         stdc_bit_ceil_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int           stdc_bit_ceil_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned long int      stdc_bit_ceil_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned long long int stdc_bit_ceil_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned char          stdc_bit_ceil_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned short         stdc_bit_ceil_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int           stdc_bit_ceil_ui(unsigned int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned long int      stdc_bit_ceil_ul(unsigned long int value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned long long int stdc_bit_ceil_ull(unsigned long long int value) EXTSTD_ATTR_UNSEQUENCED;
 #define stdc_bit_ceil(u)  _Generic((u),         \
   unsigned char         : stdc_bit_ceil_uc (u), \
   unsigned short        : stdc_bit_ceil_us (u), \
@@ -231,27 +232,27 @@ unsigned long long int stdc_bit_ceil_ull(unsigned long long int value) EXTSTD_AT
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_leading_zeros_u8 stdc_leading_zeros_uc
 #else
-unsigned int extstd_leading_zeros_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_zeros_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_leading_zeros_u16  stdc_leading_zeros_us
 #else
-unsigned int extstd_leading_zeros_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_zeros_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_leading_zeros_u32  stdc_leading_zeros_ui
 #else
-unsigned int extstd_leading_zeros_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_zeros_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_leading_zeros_u64  stdc_leading_zeros_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_leading_zeros_u64  stdc_leading_zeros_ull
 #else
-unsigned int extstd_leading_zeros_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_zeros_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_leading_zeros_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_leading_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_zeros_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_leading_zeros(u)  _Generic((u),  \
   uint8_t   : extstd_leading_zeros_u8  (u),     \
   uint16_t  : extstd_leading_zeros_u16 (u),     \
@@ -262,29 +263,29 @@ unsigned int extstd_leading_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
   default:    0                                 \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_leading_ones_u8   stdc_leading_ones_uc 
+#define extstd_leading_ones_u8   stdc_leading_ones_uc
 #else
-unsigned int extstd_leading_ones_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_ones_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_leading_ones_u16  stdc_leading_ones_us
 #else
-unsigned int extstd_leading_ones_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_ones_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_leading_ones_u32  stdc_leading_ones_ui
 #else
-unsigned int extstd_leading_ones_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_ones_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_leading_ones_u64  stdc_leading_ones_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_leading_ones_u64  stdc_leading_ones_ull
 #else
-unsigned int extstd_leading_ones_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_ones_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_leading_ones_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_leading_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_ones_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_leading_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_leading_ones(u)  _Generic((u), \
   uint8_t   : extstd_leading_ones_u8  (u),    \
   uint16_t  : extstd_leading_ones_u16 (u),    \
@@ -295,29 +296,29 @@ unsigned int extstd_leading_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
   default:    0                               \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_trailing_zeros_u8   stdc_trailing_zeros_uc 
+#define extstd_trailing_zeros_u8   stdc_trailing_zeros_uc
 #else
-unsigned int extstd_trailing_zeros_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_zeros_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_trailing_zeros_u16  stdc_trailing_zeros_us
 #else
-unsigned int extstd_trailing_zeros_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_zeros_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_trailing_zeros_u32  stdc_trailing_zeros_ui
 #else
-unsigned int extstd_trailing_zeros_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_zeros_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_trailing_zeros_u64  stdc_trailing_zeros_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_trailing_zeros_u64  stdc_trailing_zeros_ull
 #else
-unsigned int extstd_trailing_zeros_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_zeros_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_trailing_zeros_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_trailing_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_zeros_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_trailing_zeros(u)  _Generic((u), \
   uint8_t   : extstd_trailing_zeros_u8  (u),    \
   uint16_t  : extstd_trailing_zeros_u16 (u),    \
@@ -328,29 +329,29 @@ unsigned int extstd_trailing_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED
   default:    0                                 \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_trailing_ones_u8   stdc_trailing_ones_uc 
+#define extstd_trailing_ones_u8   stdc_trailing_ones_uc
 #else
-unsigned int extstd_trailing_ones_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_ones_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_trailing_ones_u16  stdc_trailing_ones_us
 #else
-unsigned int extstd_trailing_ones_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_ones_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_trailing_ones_u32  stdc_trailing_ones_ui
 #else
-unsigned int extstd_trailing_ones_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_ones_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_trailing_ones_u64  stdc_trailing_ones_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_trailing_ones_u64  stdc_trailing_ones_ull
 #else
-unsigned int extstd_trailing_ones_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_ones_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_trailing_ones_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_trailing_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_ones_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_trailing_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_trailing_ones(u)  _Generic((u),  \
   uint8_t   : extstd_trailing_ones_u8  (u),     \
   uint16_t  : extstd_trailing_ones_u16 (u),     \
@@ -361,29 +362,29 @@ unsigned int extstd_trailing_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
   default:    0                                 \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_first_leading_zero_u8   stdc_first_leading_zero_uc 
+#define extstd_first_leading_zero_u8   stdc_first_leading_zero_uc
 #else
-unsigned int extstd_first_leading_zero_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_zero_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_first_leading_zero_u16  stdc_first_leading_zero_us
 #else
-unsigned int extstd_first_leading_zero_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_zero_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_first_leading_zero_u32  stdc_first_leading_zero_ui
 #else
-unsigned int extstd_first_leading_zero_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_zero_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_first_leading_zero_u64  stdc_first_leading_zero_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_first_leading_zero_u64  stdc_first_leading_zero_ull
 #else
-unsigned int extstd_first_leading_zero_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_zero_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_first_leading_zero_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_first_leading_zero_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_zero_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_zero_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_first_leading_zero(u)  _Generic((u), \
   uint8_t   : extstd_first_leading_zero_u8  (u),    \
   uint16_t  : extstd_first_leading_zero_u16 (u),    \
@@ -394,29 +395,29 @@ unsigned int extstd_first_leading_zero_u256(uint256_t value) EXTSTD_ATTR_UNSEQUE
   default:    0                                     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_first_leading_one_u8   stdc_first_leading_one_uc 
+#define extstd_first_leading_one_u8   stdc_first_leading_one_uc
 #else
-unsigned int extstd_first_leading_one_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_one_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_first_leading_one_u16  stdc_first_leading_one_us
 #else
-unsigned int extstd_first_leading_one_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_one_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_first_leading_one_u32  stdc_first_leading_one_ui
 #else
-unsigned int extstd_first_leading_one_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_one_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_first_leading_one_u64  stdc_first_leading_one_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_first_leading_one_u64  stdc_first_leading_one_ull
 #else
-unsigned int extstd_first_leading_one_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_one_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_first_leading_one_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_first_leading_one_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_one_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_leading_one_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_first_leading_one(u)  _Generic((u),  \
   uint8_t   : extstd_first_leading_one_u8  (u),     \
   uint16_t  : extstd_first_leading_one_u16 (u),     \
@@ -427,29 +428,29 @@ unsigned int extstd_first_leading_one_u256(uint256_t value) EXTSTD_ATTR_UNSEQUEN
   default:    0                                     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_first_trailing_zero_u8   stdc_first_trailing_zero_uc 
+#define extstd_first_trailing_zero_u8   stdc_first_trailing_zero_uc
 #else
-unsigned int extstd_first_trailing_zero_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_zero_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_first_trailing_zero_u16  stdc_first_trailing_zero_us
 #else
-unsigned int extstd_first_trailing_zero_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_zero_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_first_trailing_zero_u32  stdc_first_trailing_zero_ui
 #else
-unsigned int extstd_first_trailing_zero_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_zero_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_first_trailing_zero_u64  stdc_first_trailing_zero_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_first_trailing_zero_u64  stdc_first_trailing_zero_ull
 #else
-unsigned int extstd_first_trailing_zero_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_zero_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_first_trailing_zero_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_first_trailing_zero_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_zero_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_zero_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_first_trailing_zero(u)  _Generic((u),  \
   uint8_t   : extstd_first_trailing_zero_u8  (u),     \
   uint16_t  : extstd_first_trailing_zero_u16 (u),     \
@@ -460,29 +461,29 @@ unsigned int extstd_first_trailing_zero_u256(uint256_t value) EXTSTD_ATTR_UNSEQU
   default:    0                                       \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_first_trailing_one_u8   stdc_first_trailing_one_uc 
+#define extstd_first_trailing_one_u8   stdc_first_trailing_one_uc
 #else
-unsigned int extstd_first_trailing_one_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_one_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_first_trailing_one_u16  stdc_first_trailing_one_us
 #else
-unsigned int extstd_first_trailing_one_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_one_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_first_trailing_one_u32  stdc_first_trailing_one_ui
 #else
-unsigned int extstd_first_trailing_one_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_one_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_first_trailing_one_u64  stdc_first_trailing_one_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_first_trailing_one_u64  stdc_first_trailing_one_ull
 #else
-unsigned int extstd_first_trailing_one_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_one_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_first_trailing_one_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_first_trailing_one_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_one_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_first_trailing_one_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_first_trailing_one(u)  _Generic((u), \
   uint8_t   : extstd_first_trailing_one_u8  (u),    \
   uint16_t  : extstd_first_trailing_one_u16 (u),    \
@@ -493,29 +494,29 @@ unsigned int extstd_first_trailing_one_u256(uint256_t value) EXTSTD_ATTR_UNSEQUE
   default:    0                                     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_count_zeros_u8   stdc_count_zeros_uc 
+#define extstd_count_zeros_u8   stdc_count_zeros_uc
 #else
-unsigned int extstd_count_zeros_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_zeros_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_count_zeros_u16  stdc_count_zeros_us
 #else
-unsigned int extstd_count_zeros_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_zeros_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_count_zeros_u32  stdc_count_zeros_ui
 #else
-unsigned int extstd_count_zeros_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_zeros_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_count_zeros_u64  stdc_count_zeros_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_count_zeros_u64  stdc_count_zeros_ull
 #else
-unsigned int extstd_count_zeros_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_zeros_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_count_zeros_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_count_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_zeros_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_count_zeros(u)  _Generic((u),  \
   uint8_t   : extstd_count_zeros_u8  (u),     \
   uint16_t  : extstd_count_zeros_u16 (u),     \
@@ -526,29 +527,29 @@ unsigned int extstd_count_zeros_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
   default:    0                               \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_count_ones_u8   stdc_count_ones_uc 
+#define extstd_count_ones_u8   stdc_count_ones_uc
 #else
-unsigned int extstd_count_ones_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_ones_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_count_ones_u16  stdc_count_ones_us
 #else
-unsigned int extstd_count_ones_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_ones_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_count_ones_u32  stdc_count_ones_ui
 #else
-unsigned int extstd_count_ones_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_ones_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_count_ones_u64  stdc_count_ones_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_count_ones_u64  stdc_count_ones_ull
 #else
-unsigned int extstd_count_ones_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_ones_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_count_ones_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_count_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_ones_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_count_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_count_ones(u)  _Generic((u), \
   uint8_t   : extstd_count_ones_u8  (u),    \
   uint16_t  : extstd_count_ones_u16 (u),    \
@@ -561,27 +562,27 @@ unsigned int extstd_count_ones_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_has_single_bit_u8 stdc_has_single_bit_uc
 #else
-bool extstd_has_single_bit_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool extstd_has_single_bit_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_has_single_bit_u16 stdc_has_single_bit_us
 #else
-bool extstd_has_single_bit_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool extstd_has_single_bit_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_has_single_bit_u32 stdc_has_single_bit_ui
 #else
-bool extstd_has_single_bit_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool extstd_has_single_bit_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_has_single_bit_u64 stdc_has_single_bit_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_has_single_bit_u64 stdc_has_single_bit_ull
 #else
-bool extstd_has_single_bit_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool extstd_has_single_bit_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-bool extstd_has_single_bit_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-bool extstd_has_single_bit_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool extstd_has_single_bit_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API bool extstd_has_single_bit_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_has_single_bit(u)  _Generic((u), \
   uint8_t   : extstd_has_single_bit_u8  (u),    \
   uint16_t  : extstd_has_single_bit_u16 (u),    \
@@ -592,29 +593,29 @@ bool extstd_has_single_bit_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
   default:    0                                 \
 )
 #if (UINT8_MAX == UCHAR_MAX)
-#define extstd_bit_width_u8   stdc_bit_width_uc 
+#define extstd_bit_width_u8   stdc_bit_width_uc
 #else
-unsigned int extstd_bit_width_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_bit_width_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_bit_width_u16  stdc_bit_width_us
 #else
-unsigned int extstd_bit_width_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_bit_width_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_bit_width_u32  stdc_bit_width_ui
 #else
-unsigned int extstd_bit_width_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_bit_width_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_bit_width_u64  stdc_bit_width_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_bit_width_u64  stdc_bit_width_ull
 #else
-unsigned int extstd_bit_width_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_bit_width_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-unsigned int extstd_bit_width_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-unsigned int extstd_bit_width_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_bit_width_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API unsigned int extstd_bit_width_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_bit_width(u)  _Generic((u),  \
   uint8_t   : extstd_bit_width_u8  (u),     \
   uint16_t  : extstd_bit_width_u16 (u),     \
@@ -627,27 +628,27 @@ unsigned int extstd_bit_width_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_bit_floor_u8   stdc_bit_floor_uc
 #else
-uint8_t   extstd_bit_floor_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint8_t   extstd_bit_floor_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_bit_floor_u16 stdc_bit_floor_us
 #else
-uint16_t  extstd_bit_floor_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint16_t  extstd_bit_floor_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_bit_floor_u32 stdc_bit_floor_ui
 #else
-uint32_t  extstd_bit_floor_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint32_t  extstd_bit_floor_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_bit_floor_u64 stdc_bit_floor_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_bit_floor_u64  stdc_bit_floor_ull
 #else
-uint64_t  extstd_bit_floor_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint64_t  extstd_bit_floor_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-uint128_t extstd_bit_floor_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-uint256_t extstd_bit_floor_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint128_t extstd_bit_floor_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint256_t extstd_bit_floor_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_bit_floor(u)  _Generic((u),  \
   uint8_t   : extstd_bit_floor_u8  (u),     \
   uint16_t  : extstd_bit_floor_u16 (u),     \
@@ -660,27 +661,27 @@ uint256_t extstd_bit_floor_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_bit_ceil_u8   stdc_bit_ceil_uc
 #else
-uint8_t   extstd_bit_ceil_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint8_t   extstd_bit_ceil_u8  (uint8_t   value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT16_MAX == USHRT_MAX)
 #define extstd_bit_ceil_u16 stdc_bit_ceil_us
 #else
-uint16_t  extstd_bit_ceil_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint16_t  extstd_bit_ceil_u16 (uint16_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT32_MAX == UINT_MAX)
 #define extstd_bit_ceil_u32 stdc_bit_ceil_ui
 #else
-uint32_t  extstd_bit_ceil_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint32_t  extstd_bit_ceil_u32 (uint32_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
 #if (UINT64_MAX == ULONG_MAX)
 #define extstd_bit_ceil_u64 stdc_bit_ceil_ul
 #elif (UINT64_MAX == ULLONG_MAX)
 #define extstd_bit_ceil_u64  stdc_bit_ceil_ull
 #else
-uint64_t  extstd_bit_ceil_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint64_t  extstd_bit_ceil_u64 (uint64_t  value) EXTSTD_ATTR_UNSEQUENCED;
 #endif
-uint128_t extstd_bit_ceil_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
-uint256_t extstd_bit_ceil_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint128_t extstd_bit_ceil_u128(uint128_t value) EXTSTD_ATTR_UNSEQUENCED;
+_SHARED_API uint256_t extstd_bit_ceil_u256(uint256_t value) EXTSTD_ATTR_UNSEQUENCED;
 #define extstd_bit_ceil(u)  _Generic((u), \
   uint8_t   : extstd_bit_ceil_u8  (u),    \
   uint16_t  : extstd_bit_ceil_u16 (u),    \

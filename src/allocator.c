@@ -29,7 +29,7 @@
 #include <malloc.h>
 #include <string.h>
 
-const Allocator STDAllocator = {
+_SHARED_API const Allocator STDAllocator = {
   .malloc = malloc,
   .realloc = realloc,
   .calloc = calloc,
