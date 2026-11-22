@@ -29,18 +29,26 @@
 #define EXTSTD_VISIBILITY_H
 
 #if defined(_WIN32) || defined(__CYGWIN__)
-    #ifdef _BUILDING_SHARED_
-        #define _SHARED_API __declspec(dllexport)
-    #else
-        #define _SHARED_API __declspec(dllimport)
-    #endif
+  #ifdef _BUILDING_SHARED_
+    #define _SHARED_API __declspec(dllexport)
+  #else
+    #define _SHARED_API __declspec(dllimport)
+  #endif
+  #ifdef _TEST_LOCAL_API_
+    #define _LOCAL_API  __declspec(dllexport)
+  #else
     #define _LOCAL_API
+  #endif
 #elif defined(__GNUC__) && __GNUC__ >= 4
-    #define _SHARED_API    __attribute__((visibility("default")))
-    #define _LOCAL_API     __attribute__((visibility("hidden")))
+  #define _SHARED_API  __attribute__((visibility("default")))
+  #ifdef _TEST_LOCAL_API_
+    #define _LOCAL_API __attribute__((visibility("default")))
+  #else
+    #define _LOCAL_API __attribute__((visibility("hidden")))
+  #endif
 #else
-    #define _SHARED_API
-    #define _LOCAL_API
+  #define _SHARED_API
+  #define _LOCAL_API
 #endif
 
 #endif //EXTSTD_VISIBILITY_H
