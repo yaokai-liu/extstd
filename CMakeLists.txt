@@ -21,4 +21,4 @@ include_directories(include)
 
 file(GLOB_RECURSE EXTSTD_SRC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} src/*.c src/*.h)
 add_library(extstd SHARED ${EXTSTD_SRC})
-target_compile_definitions(extstd PRIVATE "_BUILDING_SHARED_")
+target_compile_definitions(extstd PRIVATE "_SHARED_LIB_")
