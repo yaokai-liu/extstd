@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.3)
-project(extstd C)
+project(extstd VERSION 0.0.1 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 23)
 if(NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
@@ -20,5 +20,12 @@ add_compile_options("-Wall" "-Wextra" "-Werror")
 include_directories(include)
 
 file(GLOB_RECURSE EXTSTD_SRC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} src/*.c src/*.h)
-add_library(extstd SHARED ${EXTSTD_SRC})
-target_compile_definitions(extstd PRIVATE "_SHARED_LIB_")
+add_library(${PROJECT_NAME} SHARED ${EXTSTD_SRC})
+target_compile_definitions(${PROJECT_NAME} PRIVATE "_SHARED_LIB_")
+add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+target_include_directories(${PROJECT_NAME} PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
+)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules/InstallCLibrary.cmake)
+setup_c_library_install(${PROJECT_NAME})
