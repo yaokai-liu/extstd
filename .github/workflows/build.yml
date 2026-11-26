@@ -32,6 +32,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Setup MSYS2 UCRT64
         if: matrix.runner == 'windows-latest'
@@ -53,13 +55,14 @@ jobs:
           cmake -S . -B build \
             -G "${{ matrix.generator }}" \
             -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_INSTALL_PREFIX="${{ github.workspace }}/install"
+            -DBUILD_SHARED_LIBS=ON \
+            -DCMAKE_INSTALL_PREFIX="$GITHUB_WORKSPACE/install"
 
       - name: Build
-        run: cmake --build build -j
+        run: cmake --build build --config Release -j
 
       - name: Install
-        run: cmake --install build
+        run: cmake --install build --config Release
 
       - name: Package installed files
         run: |
