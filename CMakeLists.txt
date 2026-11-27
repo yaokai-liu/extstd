@@ -3,7 +3,6 @@ project(extstd VERSION 0.0.1 LANGUAGES C)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules/ProjectBasicConfig.cmake)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
-
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake-modules/CompilerOptions.cmake)
 
 include_directories(include)
