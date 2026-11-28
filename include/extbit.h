@@ -52,8 +52,7 @@ _SHARED_API unsigned int stdc_leading_zeros_ull(unsigned long long int value) EX
   unsigned short        : stdc_leading_zeros_us (u),  \
   unsigned int          : stdc_leading_zeros_ui (u),  \
   unsigned long int     : stdc_leading_zeros_ul (u),  \
-  unsigned long long int: stdc_leading_zeros_ull(u),  \
-  default:    0                                       \
+  unsigned long long int: stdc_leading_zeros_ull(u)   \
 )
 _SHARED_API unsigned int stdc_leading_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_leading_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -65,8 +64,7 @@ _SHARED_API unsigned int stdc_leading_ones_ull(unsigned long long int value) EXT
   unsigned short        : stdc_leading_ones_us (u), \
   unsigned int          : stdc_leading_ones_ui (u), \
   unsigned long int     : stdc_leading_ones_ul (u), \
-  unsigned long long int: stdc_leading_ones_ull(u), \
-  default:    0                                     \
+  unsigned long long int: stdc_leading_ones_ull(u)  \
 )
 _SHARED_API unsigned int stdc_trailing_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_trailing_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -78,8 +76,7 @@ _SHARED_API unsigned int stdc_trailing_zeros_ull(unsigned long long int value) E
   unsigned short        : stdc_trailing_zeros_us (u), \
   unsigned int          : stdc_trailing_zeros_ui (u), \
   unsigned long int     : stdc_trailing_zeros_ul (u), \
-  unsigned long long int: stdc_trailing_zeros_ull(u), \
-  default:    0                                       \
+  unsigned long long int: stdc_trailing_zeros_ull(u)  \
 )
 _SHARED_API unsigned int stdc_trailing_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_trailing_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -91,8 +88,7 @@ _SHARED_API unsigned int stdc_trailing_ones_ull(unsigned long long int value) EX
   unsigned short        : stdc_trailing_ones_us (u), \
   unsigned int          : stdc_trailing_ones_ui (u), \
   unsigned long int     : stdc_trailing_ones_ul (u), \
-  unsigned long long int: stdc_trailing_ones_ull(u), \
-  default:    0                                      \
+  unsigned long long int: stdc_trailing_ones_ull(u)  \
 )
 _SHARED_API unsigned int stdc_first_leading_zero_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_first_leading_zero_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -104,8 +100,7 @@ _SHARED_API unsigned int stdc_first_leading_zero_ull(unsigned long long int valu
   unsigned short        : stdc_first_leading_zero_us (u), \
   unsigned int          : stdc_first_leading_zero_ui (u), \
   unsigned long int     : stdc_first_leading_zero_ul (u), \
-  unsigned long long int: stdc_first_leading_zero_ull(u), \
-  default:    0                                           \
+  unsigned long long int: stdc_first_leading_zero_ull(u)  \
 )
 _SHARED_API unsigned int stdc_first_leading_one_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_first_leading_one_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -117,8 +112,7 @@ _SHARED_API unsigned int stdc_first_leading_one_ull(unsigned long long int value
   unsigned short        : stdc_first_leading_one_us (u), \
   unsigned int          : stdc_first_leading_one_ui (u), \
   unsigned long int     : stdc_first_leading_one_ul (u), \
-  unsigned long long int: stdc_first_leading_one_ull(u), \
-  default:    0                                          \
+  unsigned long long int: stdc_first_leading_one_ull(u)  \
 )
 _SHARED_API unsigned int stdc_first_trailing_zero_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_first_trailing_zero_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -130,8 +124,7 @@ _SHARED_API unsigned int stdc_first_trailing_zero_ull(unsigned long long int val
   unsigned short        : stdc_first_trailing_zero_us (u), \
   unsigned int          : stdc_first_trailing_zero_ui (u), \
   unsigned long int     : stdc_first_trailing_zero_ul (u), \
-  unsigned long long int: stdc_first_trailing_zero_ull(u), \
-  default:    0                                            \
+  unsigned long long int: stdc_first_trailing_zero_ull(u)  \
 )
 _SHARED_API unsigned int stdc_first_trailing_one_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_first_trailing_one_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -143,8 +136,7 @@ _SHARED_API unsigned int stdc_first_trailing_one_ull(unsigned long long int valu
   unsigned short        : stdc_first_trailing_one_us (u), \
   unsigned int          : stdc_first_trailing_one_ui (u), \
   unsigned long int     : stdc_first_trailing_one_ul (u), \
-  unsigned long long int: stdc_first_trailing_one_ull(u), \
-  default:    0                                           \
+  unsigned long long int: stdc_first_trailing_one_ull(u)  \
 )
 _SHARED_API unsigned int stdc_count_zeros_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_count_zeros_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -156,8 +148,7 @@ _SHARED_API unsigned int stdc_count_zeros_ull(unsigned long long int value) EXTS
   unsigned short        : stdc_count_zeros_us (u), \
   unsigned int          : stdc_count_zeros_ui (u), \
   unsigned long int     : stdc_count_zeros_ul (u), \
-  unsigned long long int: stdc_count_zeros_ull(u), \
-  default:    0                                    \
+  unsigned long long int: stdc_count_zeros_ull(u)  \
 )
 _SHARED_API unsigned int stdc_count_ones_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_count_ones_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -169,8 +160,7 @@ _SHARED_API unsigned int stdc_count_ones_ull(unsigned long long int value) EXTST
   unsigned short        : stdc_count_ones_us (u), \
   unsigned int          : stdc_count_ones_ui (u), \
   unsigned long int     : stdc_count_ones_ul (u), \
-  unsigned long long int: stdc_count_ones_ull(u), \
-  default:    0                                   \
+  unsigned long long int: stdc_count_ones_ull(u)  \
 )
 _SHARED_API bool stdc_has_single_bit_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API bool stdc_has_single_bit_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -182,8 +172,7 @@ _SHARED_API bool stdc_has_single_bit_ull(unsigned long long int value) EXTSTD_AT
   unsigned short        : stdc_has_single_bit_us (u), \
   unsigned int          : stdc_has_single_bit_ui (u), \
   unsigned long int     : stdc_has_single_bit_ul (u), \
-  unsigned long long int: stdc_has_single_bit_ull(u), \
-  default:    0                                       \
+  unsigned long long int: stdc_has_single_bit_ull(u)  \
 )
 _SHARED_API unsigned int stdc_bit_width_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned int stdc_bit_width_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -195,8 +184,7 @@ _SHARED_API unsigned int stdc_bit_width_ull(unsigned long long int value) EXTSTD
   unsigned short        : stdc_bit_width_us (u), \
   unsigned int          : stdc_bit_width_ui (u), \
   unsigned long int     : stdc_bit_width_ul (u), \
-  unsigned long long int: stdc_bit_width_ull(u), \
-  default:    0                                  \
+  unsigned long long int: stdc_bit_width_ull(u)  \
 )
 _SHARED_API unsigned char          stdc_bit_floor_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned short         stdc_bit_floor_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -208,8 +196,7 @@ _SHARED_API unsigned long long int stdc_bit_floor_ull(unsigned long long int val
   unsigned short        : stdc_bit_floor_us (u), \
   unsigned int          : stdc_bit_floor_ui (u), \
   unsigned long int     : stdc_bit_floor_ul (u), \
-  unsigned long long int: stdc_bit_floor_ull(u), \
-  default:    0                                  \
+  unsigned long long int: stdc_bit_floor_ull(u)  \
 )
 _SHARED_API unsigned char          stdc_bit_ceil_uc(unsigned char value) EXTSTD_ATTR_UNSEQUENCED;
 _SHARED_API unsigned short         stdc_bit_ceil_us(unsigned short value) EXTSTD_ATTR_UNSEQUENCED;
@@ -221,8 +208,7 @@ _SHARED_API unsigned long long int stdc_bit_ceil_ull(unsigned long long int valu
   unsigned short        : stdc_bit_ceil_us (u), \
   unsigned int          : stdc_bit_ceil_ui (u), \
   unsigned long int     : stdc_bit_ceil_ul (u), \
-  unsigned long long int: stdc_bit_ceil_ull(u), \
-  default:    0                                 \
+  unsigned long long int: stdc_bit_ceil_ull(u)  \
 )
 #endif
 #include <limits.h>
@@ -259,8 +245,7 @@ _SHARED_API unsigned int extstd_leading_zeros_u256(uint256_t value) EXTSTD_ATTR_
   uint32_t  : extstd_leading_zeros_u32 (u),     \
   uint64_t  : extstd_leading_zeros_u64 (u),     \
   uint128_t : extstd_leading_zeros_u128(u),     \
-  uint256_t : extstd_leading_zeros_u256(u),     \
-  default:    0                                 \
+  uint256_t : extstd_leading_zeros_u256(u)      \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_leading_ones_u8   stdc_leading_ones_uc
@@ -292,8 +277,7 @@ _SHARED_API unsigned int extstd_leading_ones_u256(uint256_t value) EXTSTD_ATTR_U
   uint32_t  : extstd_leading_ones_u32 (u),    \
   uint64_t  : extstd_leading_ones_u64 (u),    \
   uint128_t : extstd_leading_ones_u128(u),    \
-  uint256_t : extstd_leading_ones_u256(u),    \
-  default:    0                               \
+  uint256_t : extstd_leading_ones_u256(u)     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_trailing_zeros_u8   stdc_trailing_zeros_uc
@@ -325,8 +309,7 @@ _SHARED_API unsigned int extstd_trailing_zeros_u256(uint256_t value) EXTSTD_ATTR
   uint32_t  : extstd_trailing_zeros_u32 (u),    \
   uint64_t  : extstd_trailing_zeros_u64 (u),    \
   uint128_t : extstd_trailing_zeros_u128(u),    \
-  uint256_t : extstd_trailing_zeros_u256(u),    \
-  default:    0                                 \
+  uint256_t : extstd_trailing_zeros_u256(u)     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_trailing_ones_u8   stdc_trailing_ones_uc
@@ -358,8 +341,7 @@ _SHARED_API unsigned int extstd_trailing_ones_u256(uint256_t value) EXTSTD_ATTR_
   uint32_t  : extstd_trailing_ones_u32 (u),     \
   uint64_t  : extstd_trailing_ones_u64 (u),     \
   uint128_t : extstd_trailing_ones_u128(u),     \
-  uint256_t : extstd_trailing_ones_u256(u),     \
-  default:    0                                 \
+  uint256_t : extstd_trailing_ones_u256(u)      \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_first_leading_zero_u8   stdc_first_leading_zero_uc
@@ -391,8 +373,7 @@ _SHARED_API unsigned int extstd_first_leading_zero_u256(uint256_t value) EXTSTD_
   uint32_t  : extstd_first_leading_zero_u32 (u),    \
   uint64_t  : extstd_first_leading_zero_u64 (u),    \
   uint128_t : extstd_first_leading_zero_u128(u),    \
-  uint256_t : extstd_first_leading_zero_u256(u),    \
-  default:    0                                     \
+  uint256_t : extstd_first_leading_zero_u256(u)     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_first_leading_one_u8   stdc_first_leading_one_uc
@@ -424,8 +405,7 @@ _SHARED_API unsigned int extstd_first_leading_one_u256(uint256_t value) EXTSTD_A
   uint32_t  : extstd_first_leading_one_u32 (u),     \
   uint64_t  : extstd_first_leading_one_u64 (u),     \
   uint128_t : extstd_first_leading_one_u128(u),     \
-  uint256_t : extstd_first_leading_one_u256(u),     \
-  default:    0                                     \
+  uint256_t : extstd_first_leading_one_u256(u)      \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_first_trailing_zero_u8   stdc_first_trailing_zero_uc
@@ -457,8 +437,7 @@ _SHARED_API unsigned int extstd_first_trailing_zero_u256(uint256_t value) EXTSTD
   uint32_t  : extstd_first_trailing_zero_u32 (u),     \
   uint64_t  : extstd_first_trailing_zero_u64 (u),     \
   uint128_t : extstd_first_trailing_zero_u128(u),     \
-  uint256_t : extstd_first_trailing_zero_u256(u),     \
-  default:    0                                       \
+  uint256_t : extstd_first_trailing_zero_u256(u)      \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_first_trailing_one_u8   stdc_first_trailing_one_uc
@@ -490,8 +469,7 @@ _SHARED_API unsigned int extstd_first_trailing_one_u256(uint256_t value) EXTSTD_
   uint32_t  : extstd_first_trailing_one_u32 (u),    \
   uint64_t  : extstd_first_trailing_one_u64 (u),    \
   uint128_t : extstd_first_trailing_one_u128(u),    \
-  uint256_t : extstd_first_trailing_one_u256(u),    \
-  default:    0                                     \
+  uint256_t : extstd_first_trailing_one_u256(u)     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_count_zeros_u8   stdc_count_zeros_uc
@@ -523,8 +501,7 @@ _SHARED_API unsigned int extstd_count_zeros_u256(uint256_t value) EXTSTD_ATTR_UN
   uint32_t  : extstd_count_zeros_u32 (u),     \
   uint64_t  : extstd_count_zeros_u64 (u),     \
   uint128_t : extstd_count_zeros_u128(u),     \
-  uint256_t : extstd_count_zeros_u256(u),     \
-  default:    0                               \
+  uint256_t : extstd_count_zeros_u256(u)      \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_count_ones_u8   stdc_count_ones_uc
@@ -556,8 +533,7 @@ _SHARED_API unsigned int extstd_count_ones_u256(uint256_t value) EXTSTD_ATTR_UNS
   uint32_t  : extstd_count_ones_u32 (u),    \
   uint64_t  : extstd_count_ones_u64 (u),    \
   uint128_t : extstd_count_ones_u128(u),    \
-  uint256_t : extstd_count_ones_u256(u),    \
-  default:    0                             \
+  uint256_t : extstd_count_ones_u256(u)     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_has_single_bit_u8 stdc_has_single_bit_uc
@@ -589,8 +565,7 @@ _SHARED_API bool extstd_has_single_bit_u256(uint256_t value) EXTSTD_ATTR_UNSEQUE
   uint32_t  : extstd_has_single_bit_u32 (u),    \
   uint64_t  : extstd_has_single_bit_u64 (u),    \
   uint128_t : extstd_has_single_bit_u128(u),    \
-  uint256_t : extstd_has_single_bit_u256(u),    \
-  default:    0                                 \
+  uint256_t : extstd_has_single_bit_u256(u)     \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_bit_width_u8   stdc_bit_width_uc
@@ -622,8 +597,7 @@ _SHARED_API unsigned int extstd_bit_width_u256(uint256_t value) EXTSTD_ATTR_UNSE
   uint32_t  : extstd_bit_width_u32 (u),     \
   uint64_t  : extstd_bit_width_u64 (u),     \
   uint128_t : extstd_bit_width_u128(u),     \
-  uint256_t : extstd_bit_width_u256(u),     \
-  default:    0                             \
+  uint256_t : extstd_bit_width_u256(u)      \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_bit_floor_u8   stdc_bit_floor_uc
@@ -655,8 +629,7 @@ _SHARED_API uint256_t extstd_bit_floor_u256(uint256_t value) EXTSTD_ATTR_UNSEQUE
   uint32_t  : extstd_bit_floor_u32 (u),     \
   uint64_t  : extstd_bit_floor_u64 (u),     \
   uint128_t : extstd_bit_floor_u128(u),     \
-  uint256_t : extstd_bit_floor_u256(u),     \
-  default:    0                             \
+  uint256_t : extstd_bit_floor_u256(u)      \
 )
 #if (UINT8_MAX == UCHAR_MAX)
 #define extstd_bit_ceil_u8   stdc_bit_ceil_uc
@@ -688,8 +661,7 @@ _SHARED_API uint256_t extstd_bit_ceil_u256(uint256_t value) EXTSTD_ATTR_UNSEQUEN
   uint32_t  : extstd_bit_ceil_u32 (u),    \
   uint64_t  : extstd_bit_ceil_u64 (u),    \
   uint128_t : extstd_bit_ceil_u128(u),    \
-  uint256_t : extstd_bit_ceil_u256(u),    \
-  default:    0                           \
+  uint256_t : extstd_bit_ceil_u256(u)     \
 )
 
 #endif //EXTSTD_EXTBIT_H
