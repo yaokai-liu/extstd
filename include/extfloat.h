@@ -93,7 +93,7 @@ static_assert(sizeof(float128_t) == 16, "float128_t must be 128-bit");
 #define FLOAT64_EXP_BIAS    (((uint64_t) 1U << (FLOAT64_EXP_BIT - 1)) - 1)
 #define FLOAT128_EXP_BIAS   (((uint128_t)1U << (FLOAT128_EXP_BIT - 1)) - 1)
 
-#include "extvisibility.h"
+#include <extvisibility.h>
 // never return the NaN
 // @mantissa: is required in form of '1BB...BB', here FLOAT16_MANT_BIT count of 'B'.
 //            assumed 'BB...BB' not more than FLOAT16_MANT_MAX

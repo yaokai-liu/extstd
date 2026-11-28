@@ -38,7 +38,7 @@
 #  define EXTSTD_ATTR_UNSEQUENCED
 #endif
 
-#include "extvisibility.h"
+#include <extvisibility.h>
 #if __has_include(<stdbit.h>)
 #include <stdbit.h>
 #else
@@ -226,7 +226,7 @@ _SHARED_API unsigned long long int stdc_bit_ceil_ull(unsigned long long int valu
 )
 #endif
 #include <limits.h>
-#include "extint.h"
+#include <extint.h>
 #define typebit(_w)   (sizeof(_w) * CHAR_BIT)
 #define typehalf(_w)  ((typeof(_w))((typeof(_w))1 << ((unsigned int)typebit(_w) - 1)))
 #if (UINT8_MAX == UCHAR_MAX)

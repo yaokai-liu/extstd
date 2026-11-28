@@ -24,10 +24,10 @@
  * Create Date: 2026-11-01
  * Copyright (c) 2026 Yaokai Liu. All rights reserved.
  **/
-#include "extbit.h"
-#include "extint.h"
-#include "extfloat.h"
-#include "extlimits.h"
+#include <extbit.h>
+#include <extint.h>
+#include <extfloat.h>
+#include <extlimits.h>
 #include <string.h>
 
 #define max(a, b)   ((a) >  (b) ? (a) :  (b))

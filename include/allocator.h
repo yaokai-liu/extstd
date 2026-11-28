@@ -27,7 +27,7 @@
 
 #ifndef EXTSTD_ALLOCATOR_H
 #define EXTSTD_ALLOCATOR_H
-#include "extvisibility.h"
+#include <extvisibility.h>
 #include <stddef.h>
 
 #define REFER(T) /*VirtAddr*/ T *

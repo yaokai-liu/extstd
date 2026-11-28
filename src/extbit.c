@@ -25,7 +25,7 @@
  * Copyright (c) 2026 Yaokai Liu. All rights reserved.
  **/
 
-#include "extbit.h"
+#include <extbit.h>
 
 #if !__has_include(<stdbit.h>)
 #if !defined(__GNUC__) && !defined(_MSC_VER)
