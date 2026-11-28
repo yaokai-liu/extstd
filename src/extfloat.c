@@ -84,10 +84,10 @@ inline void extstd_float##_w##_decompose(const FLOAT(_w) val, UINT(_w) *mantissa
     *exponent = INT_TYPE_MIN((*exponent));                                                                          \
     *mantissa = mant;                                                                                               \
   } else if (biased_exp == 0) {                                                                                     \
-    *exponent = (INT(_ew)) (1 - FLOAT##_w##_EXP_BIAS) - FLOAT##_w##_EXP_BIT;                                        \
+    *exponent = (INT(_ew)) (1 - FLOAT##_w##_EXP_BIAS) - FLOAT##_w##_MANT_BIT;                                       \
     *mantissa = mant;                                                                                               \
   } else {                                                                                                          \
-    *exponent = (INT(_ew)) ((int32_t)biased_exp - FLOAT##_w##_EXP_BIAS) - FLOAT##_w##_EXP_BIT;                      \
+    *exponent = ((INT(_ew))biased_exp - FLOAT##_w##_EXP_BIAS - FLOAT##_w##_MANT_BIT);                               \
     *mantissa = mant | ((UINT(_w))1 << FLOAT##_w##_MANT_BIT);                                                       \
   }                                                                                                                 \
 }
