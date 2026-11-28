@@ -27,6 +27,7 @@
 #include "extbit.h"
 #include "extint.h"
 #include "extfloat.h"
+#include "extlimits.h"
 #include <string.h>
 
 #define max(a, b)   ((a) >  (b) ? (a) :  (b))
@@ -80,7 +81,7 @@ inline void extstd_float##_w##_decompose(const FLOAT(_w) val, UINT(_w) *mantissa
   const UINT(_w) mant = bits & ~(UINT##_w##_MAX << FLOAT##_w##_MANT_BIT);                                           \
   const UINT(_w) biased_exp = (bits << 1) >> (FLOAT##_w##_MANT_BIT + 1);                                            \
   if (biased_exp == FLOAT##_w##_EXP_MAX) {                                                                          \
-    *exponent = INT##_ew##_MAX;                                                                                     \
+    *exponent = INT_TYPE_MIN((*exponent));                                                                          \
     *mantissa = mant;                                                                                               \
   } else if (biased_exp == 0) {                                                                                     \
     *exponent = (INT(_ew)) (1 - FLOAT##_w##_EXP_BIAS) - FLOAT##_w##_EXP_BIT;                                        \

@@ -124,19 +124,22 @@ _SHARED_API float128_t extstd_float128_compose(bool sign, uint128_t mantissa, in
 // float256_t extstd_float256_compose(bool sign, uint256_t  mantissa, int32_t exponent);
 
 // val == [sign]mantissa * 2^{exponent}
-// if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
+// if (exponent == INT_TYPE_MIN(exponent)):
+// means INF/-INF or NaN/-NaN (according to if mantissa is zero)
 _SHARED_API void extstd_float16_decompose(const float16_t val, uint16_t *mantissa, int16_t *exponent, bool *sign);
 
 // val == [sign]mantissa * 2^{exponent}
-// if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
+// if (exponent == INT_TYPE_MIN(exponent)): means INF/-INF or NaN/-NaN (according to if mantissa is zero)
 _SHARED_API void extstd_float32_decompose(const float32_t val, uint32_t *mantissa, int16_t *exponent, bool *sign);
 
 // val == [sign]mantissa * 2^{exponent}
-// if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
+// if (exponent == INT_TYPE_MIN(exponent)):
+// means INF/-INF or NaN/-NaN (according to if mantissa is zero)
 _SHARED_API void extstd_float64_decompose(const float64_t val, uint64_t *mantissa, int16_t *exponent, bool *sign);
 
 // val == [sign]mantissa * 2^{exponent}
-// if (exponent == INT16_MAX): means INF/-INF or NaN/-NaN
+// if (exponent == INT_TYPE_MIN(exponent)):
+// means INF/-INF or NaN/-NaN (according to if mantissa is zero)
 _SHARED_API void extstd_float128_decompose(const float128_t val, uint128_t *mantissa, int32_t *exponent, bool *sign);
 
 #endif //EXTSTD_EXTFLOAT_H
