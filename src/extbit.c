@@ -403,27 +403,27 @@ inline unsigned long long int stdc_bit_floor_ull(unsigned long long int value) {
 
 inline unsigned char stdc_bit_ceil_uc(unsigned char value) {
   if (value <= 1) { return 1; }
-  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width(value - 1));
+  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width((unsigned char)(value - 1)));
 }
 
 inline unsigned short stdc_bit_ceil_us(unsigned short value) {
   if (value <= 1) { return 1; }
-  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width(value - 1));
+  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width((unsigned short)(value - 1)));
 }
 
 inline unsigned int stdc_bit_ceil_ui(unsigned int value) {
   if (value <= 1) { return 1; }
-  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width(value - 1));
+  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width((unsigned int)(value - 1)));
 }
 
 inline unsigned long int stdc_bit_ceil_ul(unsigned long int value) {
   if (value <= 1) { return 1; }
-  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width(value - 1));
+  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width((unsigned long int)(value - 1)));
 }
 
 inline unsigned long long int stdc_bit_ceil_ull(unsigned long long int value) {
   if (value <= 1) { return 1; }
-  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width(value - 1));
+  return value > typehalf(value) ? 0 : (typeof(value)) ((typeof(value))1 << stdc_bit_width((unsigned long long int)(value - 1)));
 }
 #endif
 
